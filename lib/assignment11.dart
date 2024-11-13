@@ -46,7 +46,7 @@ class SplashScreen extends StatelessWidget {
               style: TextStyle(color: Colors.black),
             ),
             Text(
-              'V 1.0',
+              'V 1.1.0',
               style: TextStyle(color: Colors.green),
             ),
           ],
