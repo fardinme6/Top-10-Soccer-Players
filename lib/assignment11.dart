@@ -134,9 +134,7 @@ class HomeScreen extends StatelessWidget {
             icon: Icon(Icons.more_vert, color: Colors.white),
             onSelected: (value) {
               if (value == 'Share the app') {
-                print('Share the app selected');
               } else if (value == 'About') {
-                print('About selected');
               } else if (value == 'Exit') {
                 Navigator.of(context).pop();
               }
