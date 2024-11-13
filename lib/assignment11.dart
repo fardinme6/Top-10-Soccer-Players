@@ -178,8 +178,6 @@ class ItemDetailsScreen extends StatelessWidget {
     final Uri uri = Uri.parse(url);
     if (await canLaunchUrl(uri)) {
       await launchUrl(uri);
-    } else {
-      print('Could not launch $url');
     }
   }
 
