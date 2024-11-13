@@ -107,7 +107,7 @@ class HomeScreen extends StatelessWidget {
         name: "Iker Casillas (Spain)",
         imagePath: 'images/casillas.jpg',
         details:
-            "Iker Casillas is a retired Spanish goalkeeper, Born on May 20, 1981, he spent the majority of his career at Real Madrid, winning numerous La Liga and UEFA Champions League titles. Casillas was also a key player for the Spanish national team, helping them secure the 2010 FIFA World Cup and two UEFA European Championships."),
+            "Iker Casillas is a Spanish goalkeeper, Born on May 20, 1981, he spent the majority of his career at Real Madrid, winning numerous La Liga and UEFA Champions League titles. Casillas was also a key player for the Spanish national team, helping them secure the 2010 FIFA World Cup and two UEFA European Championships."),
     Player(
         name: "Zinedine Zidane (France)",
         imagePath: 'images/zidan.jpg',
