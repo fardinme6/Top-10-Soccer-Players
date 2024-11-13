@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -116,68 +117,71 @@ class HomeScreen extends StatelessWidget {
         name: "Sergio Ramos (Spain)",
         imagePath: 'images/ramos.jpg',
         details:
-        "Sergio Ramos is a Spanish footballer, born on March 30, 1986, known for his leadership, defensive prowess, and goal-scoring ability. He spent the majority of his career at Real Madrid, winning numerous La Liga and UEFA Champions League titles. Ramos was a key figure for Spain, helping them win the 2010 FIFA World Cup and two UEFA European Championships."),
+            "Sergio Ramos is a Spanish footballer, born on March 30, 1986, known for his leadership, defensive prowess, and goal-scoring ability. He spent the majority of his career at Real Madrid, winning numerous La Liga and UEFA Champions League titles. Ramos was a key figure for Spain, helping them win the 2010 FIFA World Cup and two UEFA European Championships."),
   ];
 
-   @override  
-  Widget build(BuildContext context) {  
-    return Scaffold(  
-      appBar: AppBar(backgroundColor: Colors.cyan[800],
-        title: Text('Top 10 Soccer Players',style: TextStyle(color: Colors.white,fontFamily: 'PAPYRUS'),),  
-        actions: [  
-          PopupMenuButton<String>( 
-              icon: Icon(Icons.more_vert, color: Colors.white),  
-              onSelected: (value) {  
-              if (value == 'Share the app') { 
-                print('Share the app selected');  
-              } else if (value == 'About') {  
-                print('About selected'); 
-              } else if (value == 'Exit') {  
-                Navigator.of(context).pop();  
-              }  
-            },  
-            itemBuilder: (BuildContext context) {  
-              return {'Share the app', 'About', 'Exit'}.map((String choice) {  
-                return PopupMenuItem<String>(  
-                  value: choice,  
-                  child: Text(choice),  
-                );  
-              }).toList();  
-            },  
-          ),  
-        ],  
-      ),  
-      body: ListView.builder(  
-        itemCount: players.length,  
-        itemBuilder: (context, index) {  
-          final player = players[index];  
-          return ListTile(  
-            title: Text(player.name),  
-            onTap: () {  
-              Navigator.of(context).push(MaterialPageRoute(  
-                builder: (context) => ItemDetailsScreen(player: player),  
-              ));  
-            },  
-          );  
-        },  
-      ),  
-    );  
-  }  
-}  
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.cyan[800],
+        title: Text(
+          'Top 10 Soccer Players',
+          style: TextStyle(color: Colors.white, fontFamily: 'PAPYRUS'),
+        ),
+        actions: [
+          PopupMenuButton<String>(
+            icon: Icon(Icons.more_vert, color: Colors.white),
+            onSelected: (value) {
+              if (value == 'Share the app') {
+                print('Share the app selected');
+              } else if (value == 'About') {
+                print('About selected');
+              } else if (value == 'Exit') {
+                Navigator.of(context).pop();
+              }
+            },
+            itemBuilder: (BuildContext context) {
+              return {'Share the app', 'About', 'Exit'}.map((String choice) {
+                return PopupMenuItem<String>(
+                  value: choice,
+                  child: Text(choice),
+                );
+              }).toList();
+            },
+          ),
+        ],
+      ),
+      body: ListView.builder(
+        itemCount: players.length,
+        itemBuilder: (context, index) {
+          final player = players[index];
+          return ListTile(
+            title: Text(player.name),
+            onTap: () {
+              Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => ItemDetailsScreen(player: player),
+              ));
+            },
+          );
+        },
+      ),
+    );
+  }
+}
 
 class ItemDetailsScreen extends StatelessWidget {
   final Player player;
 
   ItemDetailsScreen({required this.player});
-  void _launchURL(String url) async {  
-    final Uri uri = Uri.parse(url);  
-    if (await canLaunchUrl(uri)) {  
-      await launchUrl(uri);  
-    } else {  
-      // Handle error or show a message  
-      print('Could not launch $url'); // You can also show an alert dialog here  
-    }  
-  }  
+  void _launchURL(String url) async {
+    final Uri uri = Uri.parse(url);
+    if (await canLaunchUrl(uri)) {
+      await launchUrl(uri);
+    } else {
+      print('Could not launch $url');
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -199,7 +203,6 @@ class ItemDetailsScreen extends StatelessWidget {
               ),
             ),
             SizedBox(height: 20),
-            // Player details
             Text(
               player.details,
               style: TextStyle(fontSize: 16, color: Colors.black),
@@ -207,7 +210,8 @@ class ItemDetailsScreen extends StatelessWidget {
             SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
-                _launchURL('https://www.espn.in/football/story/_/id/40490059/ranking-top-25-men-soccer-players-21st-century/${Uri.encodeComponent(player.name)}');
+                _launchURL(
+                    'https://www.espn.in/football/story/_/id/40490059/ranking-top-25-men-soccer-players-21st-century/${Uri.encodeComponent(player.name)}');
               },
               child: Text('More Details'),
             ),
