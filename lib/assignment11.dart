@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
+//SplashScreen is shown when the app is launched. It displays an image and some text for branding.
 class SplashScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -23,6 +23,7 @@ class SplashScreen extends StatelessWidget {
       Navigator.of(context).pushReplacement(
           MaterialPageRoute(builder: (context) => HomeScreen()));
     });
+    //Navigator.pushReplacement(). This effectively shows the splash screen and then replaces it with the home screen.
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -170,7 +171,7 @@ class HomeScreen extends StatelessWidget {
 
 class ItemDetailsScreen extends StatelessWidget {
   final Player player;
-
+//s shown when the user taps on a player from the list. It displays detailed information about that player.
   ItemDetailsScreen({required this.player});
   void _launchURL(String url) async {
     final Uri uri = Uri.parse(url);
