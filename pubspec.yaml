@@ -31,6 +31,7 @@ dependencies:
   flutter:
     sdk: flutter
   video_player: ^2.3.0  # Check for the latest version
+  url_launcher: ^6.0.20
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -73,3 +74,6 @@ flutter:
     - family: STENCIL
       fonts:
         - asset: fonts/STENCIL.TTF
+    - family: PAPYRUS
+      fonts:
+        - asset: fonts/PAPYRUS.TTF
