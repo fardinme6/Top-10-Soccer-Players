@@ -140,7 +140,7 @@ class HomeScreen extends StatelessWidget {
               }
             },
             itemBuilder: (BuildContext context) {
-              return {'Share the app', 'About', 'Exit'}.map((String choice) {
+              return {'Share app', 'About', 'Exit'}.map((String choice) {
                 return PopupMenuItem<String>(
                   value: choice,
                   child: Text(choice),
