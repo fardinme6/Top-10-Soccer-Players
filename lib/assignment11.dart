@@ -133,7 +133,7 @@ class HomeScreen extends StatelessWidget {
           PopupMenuButton<String>(
             icon: Icon(Icons.more_horiz, color: Colors.white),
             onSelected: (value) {
-              if (value == 'Share the app') {
+              if (value == 'Share app') {
               } else if (value == 'About') {
               } else if (value == 'Exit') {
                 Navigator.of(context).pop();
