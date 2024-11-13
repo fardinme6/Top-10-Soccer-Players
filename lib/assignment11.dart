@@ -131,7 +131,7 @@ class HomeScreen extends StatelessWidget {
         ),
         actions: [
           PopupMenuButton<String>(
-            icon: Icon(Icons.more_vert, color: Colors.white),
+            icon: Icon(Icons.more_horiz, color: Colors.white),
             onSelected: (value) {
               if (value == 'Share the app') {
               } else if (value == 'About') {
